@@ -1,0 +1,38 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepgfplotslibrary{groupplots}
+\pgfplotsset{compat=1.18}
+
+% 添加 ACM 相关的字体设置
+\usepackage{libertine}
+\usepackage[T1]{fontenc}
+
+% 设置 pgfplots 的默认样式
+\pgfplotsset{
+    every axis/.append style={
+        font=\footnotesize,
+        tick label style={font=\footnotesize},
+        label style={font=\footnotesize},
+        legend style={font=\footnotesize}
+    }
+}
+
+\usetikzlibrary{external}
+\tikzexternalize[
+    prefix=figures/,
+    mode=convert with system call,
+    system call={
+        pdflatex.exe -shell-escape -halt-on-error -interaction=batchmode -jobname "\image" "\texsource" &&
+        pdftops.exe -eps "\image.pdf" "\image.eps" &&
+        del "\image.pdf" &&
+        del "\image.aux" &&
+        del "\image.log"
+    }
+]
+
+\begin{document}
+\input{energy_twist_bar_combined.tex}
+\input{residual_squash_bunny.tex}
+
+\end{document}
