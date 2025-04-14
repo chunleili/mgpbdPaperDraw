@@ -2,8 +2,8 @@
 \begin{tikzpicture}
     \begin{groupplot}[
         group style={
-            group size=1 by 2,  % 改为1列2行
-            vertical sep=1.5cm  % 改用垂直间距
+            group size=2 by 1,  % 改为2列1行
+            horizontal sep=1.5cm  % 使用水平间距
         },
         width=8.4cm,
         grid=major,
@@ -11,7 +11,7 @@
         log origin=infty,
     ]
     
-    % 第一个子图（原有的迭代次数-残差图）
+    % 第一个子图
     \nextgroupplot[
         ymax=1e1,
         ymin=1e-6,
@@ -20,12 +20,11 @@
         restrict y to domain=-inf:100,
         legend columns=4,
         legend style={
-            at={(0.5,-1.5)},
+            at={(1.0,-0.2)},  % 调整图例位置
             anchor=north,
             font=\footnotesize,
             align=left,
-            cells={anchor=west},
-            % /tikz/every even column/.append style={column sep=0.5cm}  % 列间距
+            cells={anchor=west}
         },
         xlabel={Iteration Number},
         ylabel={Relative Residual},
@@ -38,7 +37,7 @@
     % 5K - 红色系
     \addplot+[red, thick, solid, mark=*, mark repeat=50] 
         table[x=Iter,y=Residual] {./data/processed/residual_squash_bunny_5K_amg.txt};
-    \addlegendentry{5K AMG}
+    \addlegendentry{5K MGPBD}
     \addplot+[red, thick, solid, mark=square*, no markers] 
         table[x=Iter,y=Residual] {./data/processed/residual_squash_bunny_5k_xpbd.txt};
     \addlegendentry{5K XPBD}
@@ -46,7 +45,7 @@
     % 12K - 蓝色系
     \addplot+[blue, thick, solid, mark=triangle, mark repeat=50] 
         table[x=Iter,y=Residual] {./data/processed/residual_squash_bunny_12K_amg.txt};
-    \addlegendentry{12K AMG}
+    \addlegendentry{12K MGPBD}
     \addplot+[blue, thick, solid, mark=diamond*, no markers] 
         table[x=Iter,y=Residual] {./data/processed/residual_squash_bunny_12k_xpbd.txt};
     \addlegendentry{12K XPBD}
@@ -54,7 +53,7 @@
     % 270K - 绿色系
     \addplot+[green!50!black, thick, solid, mark=pentagon, mark repeat=50] 
         table[x=Iter,y=Residual] {./data/processed/residual_squash_bunny_270K_amg.txt};
-    \addlegendentry{270K AMG}
+    \addlegendentry{270K MGPBD}
     \addplot+[green!50!black, thick, solid, mark=oplus*, no markers] 
         table[x=Iter,y=Residual] {./data/processed/residual_squash_bunny_270k_xpbd.txt};
     \addlegendentry{270K XPBD}
@@ -62,27 +61,18 @@
     % 850K - 紫色系
     \addplot+[yellow!40!black, thick, solid, mark=star, mark repeat=50] 
         table[x=Iter,y=Residual] {./data/processed/residual_squash_bunny_850k_amg.txt};
-    \addlegendentry{850K AMG}
+    \addlegendentry{850K MGPBD}
     \addplot+[yellow!40!black, thick, solid, mark=Mercedes star, no markers] 
     table[x=Iter,y=Residual] {./data/processed/residual_squash_bunny_850k_xpbd.txt};
     \addlegendentry{850K XPBD}
     
-    % 第二个子图（时间-残差图）
+    % 第二个子图
     \nextgroupplot[
         ymax=2,
         ymin=1e-2,
         ymode=log,
         xmax=0.8e4,
         restrict y to domain=-inf:100,
-        legend columns=4,
-        legend style={
-            at={(0.5,-0.2)},
-            anchor=north,
-            font=\footnotesize,
-            align=left,
-            cells={anchor=west},
-            /tikz/every even column/.append style={column sep=0.5cm}
-        },
         xlabel={Time (ms)},
         ylabel={Relative Residual},
         xlabel style={font=\footnotesize},
@@ -93,7 +83,7 @@
     % 5K - 红色系
     \addplot+[red, thick, solid, mark=*, mark repeat=5] 
         table[x=Time,y=Residual] {./data/processed/residual_squash_bunny_5K_amg_time.txt};
-    \addlegendentry{5K AMG}
+    \addlegendentry{5K MGPBD}
     \addplot+[red, thick, solid, no markers] 
         table[x=Time,y=Residual] {./data/processed/residual_squash_bunny_5k_xpbd_time.txt};
     \addlegendentry{5K XPBD}
@@ -101,7 +91,7 @@
     % 12K - 蓝色系
     \addplot+[blue, thick, solid, mark=triangle, mark repeat=5] 
         table[x=Time,y=Residual] {./data/processed/residual_squash_bunny_12K_amg_time.txt};
-    \addlegendentry{12K AMG}
+    \addlegendentry{12K MGPBD}
     \addplot+[blue, thick, solid, no markers] 
         table[x=Time,y=Residual] {./data/processed/residual_squash_bunny_12k_xpbd_time.txt};
     \addlegendentry{12K XPBD}
@@ -109,7 +99,7 @@
     % 270K - 绿色系
     \addplot+[green!50!black, thick, solid, mark=pentagon, mark repeat=5] 
         table[x=Time,y=Residual] {./data/processed/residual_squash_bunny_270K_amg_time.txt};
-    \addlegendentry{270K AMG}
+    \addlegendentry{270K MGPBD}
     \addplot+[green!50!black, thick, solid, no markers] 
         table[x=Time,y=Residual] {./data/processed/residual_squash_bunny_270k_xpbd_time.txt};
     \addlegendentry{270K XPBD}
@@ -117,7 +107,7 @@
     % 850K - 紫色系
     \addplot+[yellow!40!black, thick, solid, mark=star, mark repeat=5] 
         table[x=Time,y=Residual] {./data/processed/residual_squash_bunny_850k_amg_time.txt};
-    \addlegendentry{850K AMG}
+    \addlegendentry{850K MGPBD}
     \addplot+[yellow!40!black, thick, solid, no markers] 
         table[x=Time,y=Residual] {./data/processed/residual_squash_bunny_850k_xpbd_time.txt};
     \addlegendentry{850K XPBD}
