@@ -1,0 +1,41 @@
+
+\begin{tikzpicture}
+    \begin{groupplot}[
+        group style={
+            group size=1 by 1
+        },
+        width=8.4cm,  % 恢复原始宽度
+        grid=major,
+        ymode=log,
+        log origin=infty,
+        unbounded coords=jump,
+        ymax=1,
+        ymin=1e-6,
+        legend style={
+            at={(0.98,0.98)},  % 放在右上角
+            anchor=north east,  % 右上角对齐
+            align=left,
+            cells={anchor=west},
+            legend columns=1
+        },
+        xlabel={Iteration Number},
+        ylabel={Relative Residual},
+        enlarge y limits=0.1
+    ]
+    
+    \nextgroupplot
+    
+    \addplot+[blue, thick, solid, mark=*, mark repeat=1] 
+        table[x=Iteration,y=Residual] {./data/processed/residual_nullspace_nullspace.txt};
+    \addlegendentry{nullspace}
+
+    \addplot+[red, thick, solid, mark=square*, mark options={fill=red}, mark repeat=1] 
+        table[x=Iteration,y=Residual] {./data/processed/residual_nullspace_adaptiveSA.txt};
+    \addlegendentry{adaptive-SA}
+
+    \addplot+[orange, thick, solid, mark=x, mark repeat=1] 
+        table[x=Iteration,y=Residual] {./data/processed/residual_nullspace_UA.txt};
+    \addlegendentry{UA}
+
+    \end{groupplot}
+\end{tikzpicture}

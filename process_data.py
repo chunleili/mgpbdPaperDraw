@@ -42,7 +42,7 @@ def process_residual_file(input_file, output_file):
         
         base_time = None
         for line in f_in:
-            match = re.match(r"Frame:\d+ Iter:(\d+) Residual:[\d.]+e[+-]\d+ Relative:([\d.]+e[+-]\d+).*FramePastTime:([\d.]+)ms", line)
+            match = re.match(r"Frame:99 Iter:(\d+) Residual:[\d.]+e[+-]\d+ Relative:([\d.]+e[+-]\d+).*FramePastTime:([\d.]+)ms", line)
             if match:
                 iter_num = int(match.group(1))
                 relative_residual = match.group(2)
@@ -63,8 +63,11 @@ def process_residual_file(input_file, output_file):
                     else:  # AMG数据正常写入
                         f_time_out.write(f"{iter_num} {relative_residual} {relative_time}\n")
 
+
+
 # 获取所有raw目录下的txt文件
-input_files = glob('raw/*.txt')
+input_files = glob('raw/*nullspace*.txt')
+print(input_files)
 
 for input_file in input_files:
     filename = os.path.basename(input_file)
