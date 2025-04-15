@@ -1,7 +1,7 @@
 # 删除临时文件
 Remove-Item -Path "*.aux", "*.auxlock", "*.figlist", "*.log", "*.makefile", "*.out", "*.xcp",
     "*.dvi", "*.ps", "*.synctex.gz", 
-    "draw-figure*.log", "draw-figure*.dpth", "draw-figure*.md5", "*.fls",  "*.fbd_latexmk" -Force  -ErrorAction SilentlyContinue
+    "draw-figure*.log", "draw-figure*.dpth", "draw-figure*.md5", "*.fls",  "draw.fdb_latexmk" -Force  -ErrorAction SilentlyContinue
 
 # 清理figures目录中的临时文件
 if (Test-Path ".\figures") {

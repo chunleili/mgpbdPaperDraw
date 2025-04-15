@@ -1,0 +1,59 @@
+
+\begin{tikzpicture}
+    % 能量曲线图
+    \begin{axis}[
+        width=6cm,        % 减小主图宽度
+        grid=major,
+        xlabel={Iteration Number},
+        ylabel={Relative Energy},
+        legend columns=1,  % 改为单列
+        legend style={
+            at={(1.05,0.5)},  % 放在右侧
+            anchor=west,     % 左对齐
+            font=\small,
+            align=left,
+            cells={anchor=west}
+        },
+        xlabel style={font=\small},
+        ylabel style={font=\small},
+        tick label style={font=\small}
+    ]
+    
+    % E=7e7
+    \addplot+[red, thick, solid, no markers,mark repeat=50] 
+        table[x=Iter,y=Energy] {./data/processed/energy_twist_bar_7e7_amg_v2.txt};
+    \addlegendentry{7e7 MGPBD}
+    \addplot+[blue, thick, solid, no markers] 
+        table[x=Iter,y=Energy] {./data/processed/energy_twist_bar_7e7_xpbd.txt};
+    \addlegendentry{7e7 XPBD}
+    \addplot+[green!50!black, thick, solid, no markers] 
+        table[x=Iter,y=Energy] {./data/processed/energy_twist_bar_7e7_xian.txt};
+    \addlegendentry{7e7 Xian2019}
+    
+    % E=7e8
+    \addplot+[red, thick, dashdotted, no markers, mark repeat=50] 
+        table[x=Iter,y=Energy] {./data/processed/energy_twist_bar_7e8_amg_v2.txt};
+    \addlegendentry{7e8 MGPBD}
+    \addplot+[blue, thick, dashdotted, no markers] 
+        table[x=Iter,y=Energy] {./data/processed/energy_twist_bar_7e8_xpbd.txt};
+    \addlegendentry{7e8 XPBD}
+    \addplot+[green!50!black, thick, dashdotted, no markers] 
+        table[x=Iter,y=Energy] {./data/processed/energy_twist_bar_7e8_xian.txt};
+    \addlegendentry{7e8 Xian2019}
+    
+    % E=7e9
+    \addplot+[red, thick, dotted, no markers, mark repeat=50] 
+        table[x=Iter,y=Energy] {./data/processed/energy_twist_bar_7e9_amg_v2.txt};
+    \addlegendentry{7e9 MGPBD}
+    \addplot+[blue, thick, dotted, no markers] 
+        table[x=Iter,y=Energy] {./data/processed/energy_twist_bar_7e9_xpbd.txt};
+    \addlegendentry{7e9 XPBD}
+    \addplot+[green!50!black, thick, dotted, no markers] 
+        table[x=Iter,y=Energy] {./data/processed/energy_twist_bar_7e9_xian.txt};
+    \addlegendentry{7e9 Xian2019}
+    
+    \end{axis}
+    
+    % 调整图片位置
+    \node[anchor=west] at (3cm,3cm) {\includegraphics[width=0.5cm]{./twistBar.png}};
+\end{tikzpicture}
