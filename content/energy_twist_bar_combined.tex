@@ -49,9 +49,12 @@
     \addplot+[blue, thick, dotted, no markers] 
         table[x=Iter,y=Energy] {./data/processed/energy_twist_bar_7e9_xpbd.txt};
     \addlegendentry{7e9 XPBD}
-    \addplot+[green!50!black, thick, dotted, no markers] 
+    \addplot+[green!50!black, thick, dotted] 
         table[x=Iter,y=Energy] {./data/processed/energy_twist_bar_7e9_xian.txt};
     \addlegendentry{7e9 Xian2019}
+    
+    % 添加箭头和文字
+    \node[anchor=west] at (axis cs:6,0.57) {\color{black}$\leftarrow$ crash};
     
     \end{axis}
     

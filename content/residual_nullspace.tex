@@ -27,11 +27,11 @@
     
     \addplot+[blue, thick, solid, mark=*, mark repeat=1] 
         table[x=Iteration,y=Residual] {./data/processed/residual_nullspace_nullspace.txt};
-    \addlegendentry{nullspace}
+    \addlegendentry{Nullspace (Ours)}
 
     \addplot+[red, thick, solid, mark=square*, mark options={fill=red}, mark repeat=1] 
         table[x=Iteration,y=Residual] {./data/processed/residual_nullspace_adaptiveSA.txt};
-    \addlegendentry{adaptive-SA}
+    \addlegendentry{Adaptive-SA}
 
     \addplot+[orange, thick, solid, mark=x, mark repeat=1] 
         table[x=Iteration,y=Residual] {./data/processed/residual_nullspace_UA.txt};

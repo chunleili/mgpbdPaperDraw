@@ -34,34 +34,28 @@
         enlarge y limits=0.1
     ]
     
-    % 5K - 红色系
     \addplot+[red, thick, solid, mark=*, mark repeat=50] 
         table[x=Iter,y=Residual] {./data/processed/residual_squash_bunny_5K_amg.txt};
     \addlegendentry{5K MGPBD}
-    \addplot+[red, thick, solid, mark=square*, no markers] 
-        table[x=Iter,y=Residual] {./data/processed/residual_squash_bunny_5k_xpbd.txt};
-    \addlegendentry{5K XPBD}
-    
-    % 12K - 蓝色系
     \addplot+[blue, thick, solid, mark=triangle, mark repeat=50] 
         table[x=Iter,y=Residual] {./data/processed/residual_squash_bunny_12K_amg.txt};
     \addlegendentry{12K MGPBD}
-    \addplot+[blue, thick, solid, mark=diamond*, no markers] 
-        table[x=Iter,y=Residual] {./data/processed/residual_squash_bunny_12k_xpbd.txt};
-    \addlegendentry{12K XPBD}
-    
-    % 270K - 绿色系
     \addplot+[green!50!black, thick, solid, mark=pentagon, mark repeat=50] 
         table[x=Iter,y=Residual] {./data/processed/residual_squash_bunny_270K_amg.txt};
     \addlegendentry{270K MGPBD}
-    \addplot+[green!50!black, thick, solid, mark=oplus*, no markers] 
-        table[x=Iter,y=Residual] {./data/processed/residual_squash_bunny_270k_xpbd.txt};
-    \addlegendentry{270K XPBD}
-    
-    % 850K - 紫色系
     \addplot+[yellow!40!black, thick, solid, mark=star, mark repeat=50] 
         table[x=Iter,y=Residual] {./data/processed/residual_squash_bunny_850k_amg.txt};
     \addlegendentry{850K MGPBD}
+
+    \addplot+[red, thick, solid, mark=square*, no markers] 
+        table[x=Iter,y=Residual] {./data/processed/residual_squash_bunny_5k_xpbd.txt};
+    \addlegendentry{5K XPBD}
+    \addplot+[blue, thick, solid, mark=diamond*, no markers] 
+        table[x=Iter,y=Residual] {./data/processed/residual_squash_bunny_12k_xpbd.txt};
+    \addlegendentry{12K XPBD}
+    \addplot+[green!50!black, thick, solid, mark=oplus*, no markers] 
+        table[x=Iter,y=Residual] {./data/processed/residual_squash_bunny_270k_xpbd.txt};
+    \addlegendentry{270K XPBD}
     \addplot+[yellow!40!black, thick, solid, mark=Mercedes star, no markers] 
     table[x=Iter,y=Residual] {./data/processed/residual_squash_bunny_850k_xpbd.txt};
     \addlegendentry{850K XPBD}
