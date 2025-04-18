@@ -1,0 +1,92 @@
+% Resolution Time Iteration
+% 5   7803      118 
+% 12  3731      55
+% 270  15089    59
+% 850  182271   286
+
+
+
+\pgfplotstableread[row sep=\\,col sep=&]{
+    resolution & totalTime & iterTime & iter \\
+    % 5     & 7803    & 66.13  & 118 \\
+    12    & 3731    & 67.84  & 55  \\
+    270   & 15089   & 255.75 & 59  \\
+    850   & 182271  & 637.31 & 286 \\
+}\timedata
+
+\begin{tikzpicture}
+    \begin{groupplot}[
+        group style={
+            group size=2 by 1,
+            horizontal sep=1.5cm
+        },
+        width=4.2cm,
+        grid=major,
+        xlabel style={font=\fontsize{9}{11}\selectfont},
+        ylabel style={font=\fontsize{9}{11}\selectfont},
+        tick label style={font=\fontsize{9}{11}\selectfont},
+        % legend style={font=\fontsize{9}{11}\selectfont}
+    ]
+    
+    % 第一个子图：总时间
+    \nextgroupplot[
+        ylabel={Total Time (ms)},
+        xlabel={Resolution (K)},
+        xmode=log,
+        ymode=log,
+        width=4.2cm,
+        % xtick={200,500,800},        % 减少刻度数量
+        % xticklabels={2,4,8},        % 对应的标签
+        % extra x tick style={tick label style={anchor=north}},
+        % extra x tick={800},
+        % extra x ticklabels={$\times 10^2$}
+        % nodes near coords,
+        % nodes near coords style={
+        %     font=\fontsize{7}{9}\selectfont,
+        %     /pgf/number format/sci,
+        %     /pgf/number format/precision=1
+        % }
+    ]
+        % legend style={
+        %     at={(0.98,0.02)},
+        %     anchor=south east,
+        %     font=\small
+        % }
+    % ]
+    \addplot+[red, thick, solid, mark=*, mark repeat=1] 
+        table[x index=0,y=totalTime] {\timedata};
+    % \addlegendentry{Total Time}
+    
+    % 第二个子图：每次迭代时间 bar plot
+    \nextgroupplot[
+        ylabel={Time/Iter (ms)},
+        xlabel={Resolution (K)},
+        ymin=0,
+        ymax=900,
+        ybar,
+        symbolic x coords={12,270,850},
+        xticklabels={12,270,850},
+        xtick=data,
+        enlarge x limits=0.15,
+        bar width=15pt,
+        % xlabel style={font=\fontsize{9}{11}\selectfont},
+        % ylabel style={font=\fontsize{9}{11}\selectfont},
+        % tick label style={font=\fontsize{9}{11}\selectfont},
+        nodes near coords,
+        nodes near coords style={
+            font=\fontsize{7}{9}\selectfont,
+            /pgf/number format/fixed,
+            /pgf/number format/precision=0
+        },
+        tick pos=left,          % 将刻度线放在轴内侧
+        x tick style={draw=none},    % 保持x轴刻度线可见
+        y tick style={draw},     % 保持y轴刻度线可见
+        grid=none,
+    ]
+    \addplot[red, fill=red!20] 
+        table[x=resolution,y=iterTime] {\timedata};
+
+
+    
+    \end{groupplot}
+\end{tikzpicture}
