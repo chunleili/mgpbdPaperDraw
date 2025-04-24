@@ -1,0 +1,71 @@
+
+
+% 5     & 7803    & 66.13  & 118 \\
+
+\pgfplotstableread[row sep=\\,col sep=&]{
+    resolution & totalTime & iterTime & iter \\
+    12e3    & 3731    & 67.84  & 55  \\
+    50e3   & 8277    & 121.72 & 68  \\
+    100e3   & 9497    & 153.18 & 62  \\
+    270e3   & 15089   & 255.75 & 59  \\
+    558e3   & 24359   & 451.09 & 54  \\
+    850e3   & 182271  & 637.31 & 286 \\
+}\timedata
+
+\begin{tikzpicture}
+    \begin{groupplot}[
+        group style={
+            group size=2 by 1,
+            horizontal sep=1.5cm
+        },
+        % width=4.2cm,
+        grid=major,
+        xlabel style={font=\fontsize{9}{11}\selectfont},
+        ylabel style={font=\fontsize{9}{11}\selectfont},
+        tick label style={font=\fontsize{9}{11}\selectfont},
+        % legend style={font=\fontsize{9}{11}\selectfont}
+    ]
+    
+
+    % 第1个子图：每次迭代时间
+    \nextgroupplot[
+        ylabel={Iter Time (ms)},
+        xlabel={Resolution (Tet)},
+        xmode=log,
+        ymode=log,
+        ymax=1e3,
+        % ymin=1e1,
+        % xmin=1e1,
+        % xmax=1e3,
+        width=4.2cm,
+    ]
+
+    \addplot+[red, thick, solid, mark=*, mark repeat=1] 
+        table[x index=0,y=iterTime] {\timedata};
+
+        % 斜率: 6.618e-4/0.6618(with res in K)
+        % 截距: 78.2036
+        % R²分数: 0.9978
+
+ % 添加对数坐标系下的拟合直线
+    % \addplot[black, dashed, domain=12:850] {0.6618*x+78.2036};
+        % node[pos=0.7, above, sloped, font=\fontsize{7}{9}\selectfont] {$R^2=0.998$};
+    
+    % 第2个子图：总时间
+    \nextgroupplot[
+        ylabel={Total Time (ms)},
+        xlabel={Resolution (Tet)},
+        xmode=log,
+        ymode=log,
+        width=4.2cm,
+    ]
+
+    \addplot+[red, thick, solid, mark=*, mark repeat=1] 
+        table[x index=0,y=totalTime] {\timedata};
+    % \addlegendentry{Total Time}
+    
+
+
+    
+    \end{groupplot}
+\end{tikzpicture}
