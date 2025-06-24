@@ -1,0 +1,53 @@
+
+\begin{tikzpicture}
+    \begin{groupplot}[
+        group style={
+            group size=1 by 1
+        },
+        width=6cm,          % 减小主图宽度
+        grid=major,
+        ymode=log,
+        log origin=infty,
+        unbounded coords=jump,
+        % ymax=2,
+        % ymin=1e-2,
+        legend style={
+            at={(1.05,0.5)},
+            anchor=west,
+            % font=\small,
+            align=left,
+            cells={anchor=west},
+            legend columns=1
+        },
+        xlabel={Iteration Number},
+        ylabel={Relative Residual},
+        % xlabel style={font=\small},
+        % ylabel style={font=\small},
+        % tick label style={font=\small},
+        % enlarge y limits=0.1
+    ]
+    
+    \nextgroupplot
+    
+    \addplot+[red, thick, solid, mark=*, mark repeat=10] 
+        table[x=Iter,y=Residual] {./data/processed/residual_interval1_time.txt};
+    \addlegendentry{Interval = 1}
+
+    \addplot+[blue, thick, solid, mark=triangle, mark repeat=10] 
+        table[x=Iter,y=Residual] {./data/processed/residual_interval10_time.txt};
+    \addlegendentry{Interval = 10}
+
+    \addplot+[green!50!black, thick, solid, mark=pentagon, mark repeat=10] 
+        table[x=Iter,y=Residual] {./data/processed/residual_interval20_time.txt};
+    \addlegendentry{Interval = 20}
+
+    \addplot+[yellow!40!black, thick, solid, mark=star, mark repeat=10] 
+        table[x=Iter,y=Residual] {./data/processed/residual_interval50_time.txt};
+    \addlegendentry{Interval = 50}
+    
+    \addplot+[orange, thick, solid, mark=+, mark repeat=10]
+        table[x=Iter,y=Residual] {./data/processed/residual_interval100_time.txt};
+    \addlegendentry{Interval = 100}
+
+    \end{groupplot}
+\end{tikzpicture}

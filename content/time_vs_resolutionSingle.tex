@@ -15,57 +15,32 @@
 \begin{tikzpicture}
     \begin{groupplot}[
         group style={
-            group size=2 by 1,
+            group size=1 by 1,    % 改为1个子图
             horizontal sep=1.5cm
         },
-        % width=4.2cm,
         grid=major,
         xlabel style={font=\fontsize{9}{11}\selectfont},
         ylabel style={font=\fontsize{9}{11}\selectfont},
         tick label style={font=\fontsize{9}{11}\selectfont},
-        % legend style={font=\fontsize{9}{11}\selectfont}
     ]
     
-
     % 第1个子图：每次迭代时间
     \nextgroupplot[
-        ylabel={Iter Time (ms)},
+        ylabel={Time Per Iteration (ms)},
         xlabel={Resolution (Tet)},
-        xmode=log,
+        xmode=log, 
         ymode=log,
         ymin=5e1,
         ymax=1e3,
         xmin=1e4,
-        xmax=1e6, 
-        width=4.2cm,
+        xmax=1e6,
+        width=8.4cm,
+        height=5cm,
+        % enlarge y limits={rel=0.1},
     ]
 
     \addplot+[red, thick, solid, mark=*, mark repeat=1] 
         table[x index=0,y=iterTime] {\timedata};
-
-        % 斜率: 6.618e-4/0.6618(with res in K)
-        % 截距: 78.2036
-        % R²分数: 0.9978
-
- % 添加对数坐标系下的拟合直线
-    % \addplot[black, dashed, domain=12:850] {0.6618*x+78.2036};
-        % node[pos=0.7, above, sloped, font=\fontsize{7}{9}\selectfont] {$R^2=0.998$};
-    
-    % 第2个子图：总时间
-    \nextgroupplot[
-        ylabel={Total Time (ms)},
-        xlabel={Resolution (Tet)},
-        xmode=log,
-        ymode=log,
-        width=4.2cm,
-    ]
-
-    \addplot+[red, thick, solid, mark=*, mark repeat=1] 
-        table[x index=0,y=totalTime] {\timedata};
-    % \addlegendentry{Total Time}
-    
-
-
     
     \end{groupplot}
 \end{tikzpicture}

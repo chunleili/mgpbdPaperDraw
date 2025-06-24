@@ -66,7 +66,7 @@ def process_residual_file(input_file, output_file):
 
 
 # 获取所有raw目录下的txt文件
-input_files = glob('raw/*nullspace*.txt')
+input_files = glob('raw/residual_interval*.txt')
 print(input_files)
 
 for input_file in input_files:

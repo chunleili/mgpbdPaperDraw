@@ -1,0 +1,89 @@
+
+\begin{tikzpicture}
+    \begin{groupplot}[
+        group style={
+            group size=2 by 1,  % 改为2列1行
+            horizontal sep=1.5cm  % 使用水平间距
+        },
+        width=8.4cm,
+        grid=major,
+        ymode=log,
+        log origin=infty,
+        legend style={
+            at={(0.0,0.0)},  % 修改图例位置到左下角
+            anchor=south west, % 修改锚点到左下角
+            font=\footnotesize,
+            align=left,
+            cells={anchor=west}
+        },
+    ]
+    
+    % % 第一个子图
+    % \nextgroupplot[
+    %     ymax=1e1,
+    %     ymin=1e-6,
+    %     ymode=log,
+    %     log origin=infty,
+    %     restrict y to domain=-inf:100,
+    %     legend columns=4,
+    %     legend style={
+    %         at={(1.0,-0.2)},  % 调整图例位置
+    %         anchor=north,
+    %         font=\footnotesize,
+    %         align=left,
+    %         cells={anchor=west}
+    %     },
+    %     xlabel={Iteration Number},
+    %     ylabel={Relative Residual},
+    %     xlabel style={font=\footnotesize},
+    %     ylabel style={font=\footnotesize},
+    %     tick label style={font=\footnotesize},
+    %     enlarge y limits=0.1
+    % ]
+
+    % \addplot+[red, thick, solid, mark=pentagon, mark repeat=50] 
+    %     table[x=Iter,y=Residual] {./data/processed/residual_squash_bunny_270K_amg.txt};
+    % \addlegendentry{270K MGPBD}
+
+    % \addplot+[blue, thick, solid, mark=oplus*, no markers] 
+    %     table[x=Iter,y=Residual] {./data/processed/residual_squash_bunny_270k_xpbd.txt};
+    % \addlegendentry{270K XPBD}
+
+    
+    % 第二个子图
+    \nextgroupplot[
+        ymax=2,
+        ymin=1e-2,
+        ymode=log,
+        % xmax=1e4,
+        restrict y to domain=-inf:100,
+        xlabel={Time (ms)},
+        ylabel={Relative Residual},
+        xlabel style={font=\footnotesize},
+        ylabel style={font=\footnotesize},
+        tick label style={font=\footnotesize}
+    ]
+    
+
+    
+    % 270K - 绿色系
+    \addplot+[red, thick, solid, mark=pentagon, mark repeat=5] 
+        table[x=Time,y=Residual] {./data/processed/residual_squash_bunny_270K_amg_time.txt};
+    \addlegendentry{270K MGPBD}
+    \addplot+[blue, thick, solid, no markers] 
+        table[x=Time,y=Residual] {./data/processed/residual_squash_bunny_270k_xpbd_time.txt};
+    \addlegendentry{270K XPBD}
+
+    % 添加箭头和文字，标注XPBD已到达10000 iter
+    \draw[->, thick, blue] (19000,0.55) node[below, font=\normalsize, blue, align=left] {XPBD at\\10000 iter} -- (19716,0.68) ;
+
+
+    % 添加箭头和文字，标注AMG已到达59 iter
+    \draw[->, thick, red] (16000,0.02) node[above, font=\normalsize, red, align=left] {AMG at\\59 iter} -- (15088,0.011) ;
+
+
+    % 隐藏第二个子图的图例
+    % \legend{}
+    
+    \end{groupplot}
+\end{tikzpicture}

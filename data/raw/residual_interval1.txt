@@ -1,0 +1,130 @@
+Frame:99 Iter:0 Residual:1.193e+01 Relative:1.000e+00 FramePastTime:781.7ms
+nnz: 18165597
+matsize: 270199
+build P by method:UA
+maxiter: 20
+rtol: 1e-05
+MultilevelSolver
+Number of Levels:     3
+Operator Complexity:   1.002
+Grid Complexity:       1.011
+Coarse Solver:        'pinv'
+  level   unknowns     nonzeros
+     0      270199     18165597 [99.76%]
+     1        2729        43055 [0.24%]
+     2         113         1335 [0.01%]
+
+Build P Time:0.35s
+    build_Ps time:0.5558634999906644
+    update_P time: 0.00s
+    RAP time: 81ms
+    setup smoothers time:0.3031059000059031
+Frame:99 Iter:1 Residual:1.166e+01 Relative:9.775e-01 FramePastTime:4227.9ms
+Frame:99 Iter:2 Residual:1.127e+01 Relative:9.442e-01 FramePastTime:4482.5ms
+Frame:99 Iter:3 Residual:1.072e+01 Relative:8.986e-01 FramePastTime:4736.2ms
+Frame:99 Iter:4 Residual:1.017e+01 Relative:8.524e-01 FramePastTime:4993.4ms
+Frame:99 Iter:5 Residual:9.719e+00 Relative:8.146e-01 FramePastTime:5253.0ms
+Frame:99 Iter:6 Residual:9.308e+00 Relative:7.802e-01 FramePastTime:5511.6ms
+Frame:99 Iter:7 Residual:8.952e+00 Relative:7.503e-01 FramePastTime:5768.8ms
+Frame:99 Iter:8 Residual:8.548e+00 Relative:7.165e-01 FramePastTime:6028.5ms
+Frame:99 Iter:9 Residual:8.241e+00 Relative:6.908e-01 FramePastTime:6293.3ms
+Frame:99 Iter:10 Residual:7.853e+00 Relative:6.582e-01 FramePastTime:6547.7ms
+collision response
+Frame:99 Iter:11 Residual:7.504e+00 Relative:6.289e-01 FramePastTime:6810.8ms
+Frame:99 Iter:12 Residual:7.147e+00 Relative:5.990e-01 FramePastTime:7084.6ms
+Frame:99 Iter:13 Residual:6.806e+00 Relative:5.704e-01 FramePastTime:7358.8ms
+Frame:99 Iter:14 Residual:6.507e+00 Relative:5.454e-01 FramePastTime:7632.8ms
+Frame:99 Iter:15 Residual:6.194e+00 Relative:5.191e-01 FramePastTime:7897.5ms
+Frame:99 Iter:16 Residual:5.901e+00 Relative:4.946e-01 FramePastTime:8159.1ms
+Frame:99 Iter:17 Residual:5.584e+00 Relative:4.680e-01 FramePastTime:8413.6ms
+Frame:99 Iter:18 Residual:5.277e+00 Relative:4.423e-01 FramePastTime:8680.8ms
+Frame:99 Iter:19 Residual:5.006e+00 Relative:4.196e-01 FramePastTime:8953.4ms
+Frame:99 Iter:20 Residual:4.713e+00 Relative:3.950e-01 FramePastTime:9245.1ms
+collision response
+Frame:99 Iter:21 Residual:4.480e+00 Relative:3.755e-01 FramePastTime:9518.3ms
+Frame:99 Iter:22 Residual:4.338e+00 Relative:3.636e-01 FramePastTime:9793.0ms
+Frame:99 Iter:23 Residual:4.142e+00 Relative:3.472e-01 FramePastTime:10055.8ms
+Frame:99 Iter:24 Residual:3.886e+00 Relative:3.257e-01 FramePastTime:10315.3ms
+Frame:99 Iter:25 Residual:3.768e+00 Relative:3.158e-01 FramePastTime:10576.2ms
+Frame:99 Iter:26 Residual:3.533e+00 Relative:2.961e-01 FramePastTime:10838.1ms
+Frame:99 Iter:27 Residual:3.326e+00 Relative:2.788e-01 FramePastTime:11098.7ms
+Frame:99 Iter:28 Residual:3.148e+00 Relative:2.638e-01 FramePastTime:11356.5ms
+Frame:99 Iter:29 Residual:3.069e+00 Relative:2.572e-01 FramePastTime:11617.4ms
+Frame:99 Iter:30 Residual:2.897e+00 Relative:2.428e-01 FramePastTime:11912.7ms
+collision response
+Frame:99 Iter:31 Residual:2.722e+00 Relative:2.281e-01 FramePastTime:12189.0ms
+Frame:99 Iter:32 Residual:2.639e+00 Relative:2.212e-01 FramePastTime:12473.4ms
+Frame:99 Iter:33 Residual:2.458e+00 Relative:2.060e-01 FramePastTime:12757.1ms
+Frame:99 Iter:34 Residual:2.316e+00 Relative:1.941e-01 FramePastTime:13043.9ms
+Frame:99 Iter:35 Residual:2.154e+00 Relative:1.805e-01 FramePastTime:13322.3ms
+Frame:99 Iter:36 Residual:2.036e+00 Relative:1.707e-01 FramePastTime:13597.9ms
+Frame:99 Iter:37 Residual:1.910e+00 Relative:1.601e-01 FramePastTime:13878.7ms
+Frame:99 Iter:38 Residual:1.832e+00 Relative:1.535e-01 FramePastTime:14153.1ms
+Frame:99 Iter:39 Residual:1.770e+00 Relative:1.484e-01 FramePastTime:14423.4ms
+Frame:99 Iter:40 Residual:1.681e+00 Relative:1.409e-01 FramePastTime:14697.2ms
+collision response
+Frame:99 Iter:41 Residual:1.552e+00 Relative:1.301e-01 FramePastTime:14977.3ms
+Frame:99 Iter:42 Residual:1.502e+00 Relative:1.259e-01 FramePastTime:15257.3ms
+Frame:99 Iter:43 Residual:1.403e+00 Relative:1.176e-01 FramePastTime:15540.4ms
+Frame:99 Iter:44 Residual:1.339e+00 Relative:1.122e-01 FramePastTime:15819.8ms
+Frame:99 Iter:45 Residual:1.300e+00 Relative:1.089e-01 FramePastTime:16095.9ms
+Frame:99 Iter:46 Residual:1.214e+00 Relative:1.017e-01 FramePastTime:16386.3ms
+Frame:99 Iter:47 Residual:1.151e+00 Relative:9.645e-02 FramePastTime:16686.5ms
+Frame:99 Iter:48 Residual:1.066e+00 Relative:8.930e-02 FramePastTime:16969.4ms
+Frame:99 Iter:49 Residual:9.950e-01 Relative:8.339e-02 FramePastTime:17247.6ms
+Frame:99 Iter:50 Residual:9.435e-01 Relative:7.908e-02 FramePastTime:17523.0ms
+collision response
+Frame:99 Iter:51 Residual:8.850e-01 Relative:7.418e-02 FramePastTime:17798.3ms
+Frame:99 Iter:52 Residual:8.593e-01 Relative:7.202e-02 FramePastTime:18081.6ms
+Frame:99 Iter:53 Residual:8.235e-01 Relative:6.902e-02 FramePastTime:18356.9ms
+Frame:99 Iter:54 Residual:7.764e-01 Relative:6.508e-02 FramePastTime:18627.7ms
+Frame:99 Iter:55 Residual:7.472e-01 Relative:6.263e-02 FramePastTime:18899.5ms
+Frame:99 Iter:56 Residual:7.195e-01 Relative:6.031e-02 FramePastTime:19169.7ms
+Frame:99 Iter:57 Residual:6.720e-01 Relative:5.633e-02 FramePastTime:19444.9ms
+Frame:99 Iter:58 Residual:6.500e-01 Relative:5.448e-02 FramePastTime:19725.1ms
+Frame:99 Iter:59 Residual:6.251e-01 Relative:5.239e-02 FramePastTime:19998.9ms
+Frame:99 Iter:60 Residual:5.957e-01 Relative:4.993e-02 FramePastTime:20302.0ms
+collision response
+Frame:99 Iter:61 Residual:5.773e-01 Relative:4.839e-02 FramePastTime:20595.2ms
+Frame:99 Iter:62 Residual:5.554e-01 Relative:4.655e-02 FramePastTime:20884.7ms
+Frame:99 Iter:63 Residual:5.354e-01 Relative:4.487e-02 FramePastTime:21168.2ms
+Frame:99 Iter:64 Residual:5.219e-01 Relative:4.375e-02 FramePastTime:21441.5ms
+Frame:99 Iter:65 Residual:5.027e-01 Relative:4.213e-02 FramePastTime:21727.2ms
+Frame:99 Iter:66 Residual:4.885e-01 Relative:4.095e-02 FramePastTime:22003.0ms
+Frame:99 Iter:67 Residual:4.545e-01 Relative:3.809e-02 FramePastTime:22293.3ms
+Frame:99 Iter:68 Residual:4.380e-01 Relative:3.671e-02 FramePastTime:22571.5ms
+Frame:99 Iter:69 Residual:4.156e-01 Relative:3.484e-02 FramePastTime:22853.0ms
+Frame:99 Iter:70 Residual:3.949e-01 Relative:3.310e-02 FramePastTime:23130.8ms
+collision response
+Frame:99 Iter:71 Residual:3.807e-01 Relative:3.191e-02 FramePastTime:23415.3ms
+Frame:99 Iter:72 Residual:3.673e-01 Relative:3.078e-02 FramePastTime:23701.1ms
+Frame:99 Iter:73 Residual:3.551e-01 Relative:2.976e-02 FramePastTime:23979.4ms
+Frame:99 Iter:74 Residual:3.462e-01 Relative:2.902e-02 FramePastTime:24273.0ms
+Frame:99 Iter:75 Residual:3.310e-01 Relative:2.774e-02 FramePastTime:24578.1ms
+Frame:99 Iter:76 Residual:3.235e-01 Relative:2.711e-02 FramePastTime:24854.3ms
+Frame:99 Iter:77 Residual:3.019e-01 Relative:2.530e-02 FramePastTime:25143.8ms
+Frame:99 Iter:78 Residual:2.959e-01 Relative:2.480e-02 FramePastTime:25429.6ms
+Frame:99 Iter:79 Residual:2.882e-01 Relative:2.415e-02 FramePastTime:25714.4ms
+Frame:99 Iter:80 Residual:2.712e-01 Relative:2.273e-02 FramePastTime:25991.5ms
+collision response
+Frame:99 Iter:81 Residual:2.629e-01 Relative:2.203e-02 FramePastTime:26271.2ms
+Frame:99 Iter:82 Residual:2.572e-01 Relative:2.155e-02 FramePastTime:26547.2ms
+Frame:99 Iter:83 Residual:2.500e-01 Relative:2.096e-02 FramePastTime:26823.0ms
+Frame:99 Iter:84 Residual:2.425e-01 Relative:2.033e-02 FramePastTime:27100.4ms
+Frame:99 Iter:85 Residual:2.330e-01 Relative:1.953e-02 FramePastTime:27375.5ms
+Frame:99 Iter:86 Residual:2.245e-01 Relative:1.882e-02 FramePastTime:27652.7ms
+Frame:99 Iter:87 Residual:2.216e-01 Relative:1.857e-02 FramePastTime:27933.3ms
+Frame:99 Iter:88 Residual:2.099e-01 Relative:1.759e-02 FramePastTime:28207.1ms
+Frame:99 Iter:89 Residual:2.052e-01 Relative:1.720e-02 FramePastTime:28474.3ms
+Frame:99 Iter:90 Residual:1.907e-01 Relative:1.598e-02 FramePastTime:28739.1ms
+collision response
+Frame:99 Iter:91 Residual:1.853e-01 Relative:1.553e-02 FramePastTime:29000.3ms
+Frame:99 Iter:92 Residual:1.783e-01 Relative:1.494e-02 FramePastTime:29271.6ms
+Frame:99 Iter:93 Residual:1.725e-01 Relative:1.446e-02 FramePastTime:29537.6ms
+Frame:99 Iter:94 Residual:1.589e-01 Relative:1.332e-02 FramePastTime:29808.4ms
+Frame:99 Iter:95 Residual:1.520e-01 Relative:1.274e-02 FramePastTime:30078.8ms
+Frame:99 Iter:96 Residual:1.454e-01 Relative:1.219e-02 FramePastTime:30348.9ms
+Frame:99 Iter:97 Residual:1.378e-01 Relative:1.155e-02 FramePastTime:30621.2ms
+Frame:99 Iter:98 Residual:1.332e-01 Relative:1.116e-02 FramePastTime:30888.1ms
+Frame:99 Iter:99 Residual:1.245e-01 Relative:1.043e-02 FramePastTime:31148.4ms
+Frame:99 Iter:100 Residual:1.222e-01 Relative:1.025e-02 FramePastTime:31413.4ms
